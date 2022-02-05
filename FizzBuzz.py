@@ -29,3 +29,5 @@ for i in range(len(theList)):
         print("Buzz")
     else:
         print("Neither Fizz nor Buzz")
+
+#this some clean ass code mmmhmm
