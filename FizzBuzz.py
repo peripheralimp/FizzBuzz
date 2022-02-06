@@ -30,4 +30,6 @@ for i in range(len(theList)):
     else:
         print("Neither Fizz nor Buzz")
 
+print("\nComplete\n")
+
 #this some clean ass code mmmhmm
