@@ -20,6 +20,7 @@ while True:
 print("\nTesting...\n")
 for i in range(len(theList)):
     x = int(theList[i])
+    print(str(x) + ": ", end = "")
     if x % 3 == 0:
         if x % 5 == 0:
             print("FizzBuzz")
