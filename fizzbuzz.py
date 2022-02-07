@@ -1,7 +1,7 @@
 #the fizzybussy project
 #Gavin Webster 2/5/2022
 
-def fizzBuzz(inputList):
+def fizzbuzz_method(inputList):
     outputList = []
     for item in inputList:
         if item % 3 == 0:
