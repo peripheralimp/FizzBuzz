@@ -1,36 +1,16 @@
 #the fizzybussy project
 #Gavin Webster 2/5/2022
 
-print("""Enter an integer to add to the FizzBuzz testing list.
-Enter "execute" when ready to test.""")
-theList = []
-
-while True:
-    nextInt = input()
-    if nextInt.isnumeric():
-        theList.append(nextInt)
-    elif nextInt == "execute":
-        "List complete."
-        break
-    else:
-        print('Invalid input. Enter an integer or "execute" when ready to test.')
-        continue
-    print("Enter next integer:")
-
-print("\nTesting...\n")
-for i in range(len(theList)):
-    x = int(theList[i])
-    print(str(x) + ": ", end = "")
-    if x % 3 == 0:
-        if x % 5 == 0:
-            print("FizzBuzz")
+def fizzBuzz(inputList):
+    outputList = []
+    for item in inputList:
+        if item % 3 == 0:
+            if item % 5 == 0:
+                outputList.append("FizzBuzz")
+            else:
+                outputList.append("Fizz")
+        elif item % 5 == 0:
+            outputList.append("Buzz")
         else:
-            print("Fizz")
-    elif x % 5 == 0:
-        print("Buzz")
-    else:
-        print("Neither Fizz nor Buzz")
-
-print("\nComplete\n")
-
-#this some clean ass code mmmhmm
+            outputList.append("")
+    return outputList
