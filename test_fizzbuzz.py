@@ -1,20 +1,30 @@
 import unittest
-from fizzbuzz import fizzbuzz_func
+import fizzbuzz
 
-#made these items global so I wouldnt have to declare/define in both test functions
-testList = [-15, -5, -3, -2, -1, 0, 3, 4, 5, 9, 15, 16, 30, 150000]
-ANSWERLIST = ['FizzBuzz', 'Buzz', 'Fizz', '', '', 'FizzBuzz', 'Fizz', '', 'Buzz', 'Fizz', 'FizzBuzz', '', 'FizzBuzz', 'FizzBuzz']
-outputList = fizzbuzz_func(testList)
-#testlist -> outputList, which is compared to answerList in tests below
 
 class TestFizzbuzz(unittest.TestCase):
-    #tests individual elements in outputList
-    def test_elements(self):
-        for i in range(len(outputList)):
-            self.assertEqual(outputList[i], ANSWERLIST[i])
-    #tests the whole outputList. redundant?
-    def test_list(self):
-        self.assertListEqual(outputList, ANSWERLIST)
+    # tests for each of the paths in fizzbuzz_func
+
+    # given a number when it is divisible by both 3 and 5, should return 'FizzBuzz'
+    def test_divisible_by_both(self):
+        result = fizzbuzz.fizzbuzz_func([15])
+        self.assertEqual(result, ['FizzBuzz'])
+
+    # given a number when it is divisible by 3, should return 'Fizz'
+    def test_divisible_by_3(self):
+        result = fizzbuzz.fizzbuzz_func([3])
+        self.assertEqual(result, ['Fizz'])
+
+    # given a number when it is divisible by 5, should return 'Buzz'
+    def test_divisible_by_5(self):
+        result = fizzbuzz.fizzbuzz_func([5])
+        self.assertEqual(result, ['Buzz'])
+
+    # given a number when it is divisible by neither, should return ''
+    def test_divisible_by_neither(self):
+        result = fizzbuzz.fizzbuzz_func([2])
+        self.assertEqual(result, [''])
+
 
 if __name__ == '__main__':
     unittest.main()
