@@ -14,5 +14,3 @@ def fizzbuzz_func(inputList):
         else:
             outputList.append("")
     return outputList
-
-fizzbuzz_func([])
