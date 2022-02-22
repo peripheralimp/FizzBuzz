@@ -1,16 +1,17 @@
 # the fizzybussy project
 # Gavin Webster 2/5/2022
 
-def fizzbuzz_func(inputList):
-    outputList = []
-    for item in inputList:
-        item = int(item)
-        if item % 3 == 0 and item % 5 == 0:
-            outputList.append("FizzBuzz")
-        elif item % 3 == 0:
-            outputList.append("Fizz")
-        elif item % 5 == 0:
-            outputList.append("Buzz")
-        else:
-            outputList.append("")
-    return outputList
+def fizzbuzz_func(x):
+    try:
+        x = int(x)
+    except ValueError:
+        print('Not a valid input')
+        return
+    if x % 3 == 0 and x % 5 == 0:
+        return 'FizzBuzz'
+    elif x % 3 == 0:
+        return 'Fizz'
+    elif x % 5 == 0:
+        return 'Buzz'
+    else:
+        return ''

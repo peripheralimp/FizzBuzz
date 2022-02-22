@@ -1,5 +1,5 @@
 import unittest
-import fizzbuzz
+import fizzbuzz as fz
 
 
 class TestFizzbuzz(unittest.TestCase):
@@ -7,23 +7,19 @@ class TestFizzbuzz(unittest.TestCase):
 
     # given a number when it is divisible by both 3 and 5, should return 'FizzBuzz'
     def test_divisible_by_both(self):
-        result = fizzbuzz.fizzbuzz_func([15])
-        self.assertEqual(result, ['FizzBuzz'])
+        self.assertEqual(fz.fizzbuzz_func(15), 'FizzBuzz')
 
     # given a number when it is divisible by 3, should return 'Fizz'
     def test_divisible_by_3(self):
-        result = fizzbuzz.fizzbuzz_func([3])
-        self.assertEqual(result, ['Fizz'])
+        self.assertEqual(fz.fizzbuzz_func(3), 'Fizz')
 
     # given a number when it is divisible by 5, should return 'Buzz'
     def test_divisible_by_5(self):
-        result = fizzbuzz.fizzbuzz_func([5])
-        self.assertEqual(result, ['Buzz'])
+        self.assertEqual(fz.fizzbuzz_func(5), 'Buzz')
 
     # given a number when it is divisible by neither, should return ''
     def test_divisible_by_neither(self):
-        result = fizzbuzz.fizzbuzz_func([2])
-        self.assertEqual(result, [''])
+        self.assertEqual(fz.fizzbuzz_func(1), '')
 
 
 if __name__ == '__main__':
